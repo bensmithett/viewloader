@@ -37,6 +37,9 @@ viewloader will find every element on the page with a `data-view` attribute and 
 viewloader.execute( myApp.views, $("#updated-dom-container") );
 ```
 
+## Dependencies
+viewloader needs either [jQuery](http://jquery.com/) or [Zepto](http://zeptojs.com/). If you're not using either of those, it's 13 whole lines of JavaScript... I'm sure you can rewrite it to suit your needs :)
+
 ## License
 viewloader is released under the [MIT License](http://ben.mit-license.org/)
 
