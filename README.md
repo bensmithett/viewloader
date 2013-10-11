@@ -15,7 +15,7 @@ Create a object for your app that lists setup functions for each type of view.
 ```javascript
 myApp.views = {
   dropdown: function( $el ) { $el.fancyDropdown(); },
-  chatWindow: function( $el, el ) { new ChatWindowView(); },
+  chatWindow: function( $el, el ) { new ChatWindowView({ el: el }); },
   // ... etc etc
 };
 ```
