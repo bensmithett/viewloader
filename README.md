@@ -1,4 +1,4 @@
-Viewloader is a tiny little framework-agnostic JS bootstrapping thing that lets you attach JS behaviour to a HTML element using data attributes.
+viewloader is a tiny little framework-agnostic JS bootstrapping thing that lets you attach JS behaviour to a HTML element using data attributes.
 
 ## How to use it
 
@@ -39,3 +39,6 @@ viewloader.execute( myApp.views, $("#updated-dom-container") );
 
 ## License
 viewloader is released under the [MIT License](http://ben.mit-license.org/)
+
+## Shoutout
+viewloader is just a slightly-tweaked and bower-componentized version of an idea that [Toby](https://github.com/tobico) showed me.
