@@ -1,7 +1,6 @@
-viewloader
-==========
+Viewloader is a tiny little framework-agnostic JS bootstrapping thing that lets you attach JS behaviour to a HTML element using data attributes.
 
-A tiny little framework-agnostic JS bootstrapping thing.
+## How to use it
 
 Add `data-view` attributes to your HTML:
 
@@ -16,15 +15,15 @@ Create a object for your app that lists setup functions for each type of view.
 ```javascript
 myApp.views = {
   dropdown: function( $el ) { $el.fancyDropdown(); },
-  chatWindow: function( $el, el ) { new ChatWindowView({ model: new ChatWindow, el: el }); },
-  // ...
+  chatWindow: function( $el, el ) { new ChatWindowView(); },
+  // ... etc etc
 };
 ```
 
 Once the DOM is ready, run:
 
 ```javascript
-viewloader.execute( myApp.Views );
+viewloader.execute( myApp.views );
 ```
 
 viewloader will find every element on the page with a `data-view` attribute and call its setup function with 2 arguments:
