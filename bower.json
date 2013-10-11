@@ -1,0 +1,18 @@
+{
+  "name": "viewloader",
+  "main": "viewloader.js",
+  "version": "0.0.1",
+  "homepage": "https://github.com/bensmithett/viewloader",
+  "authors": [
+    "Ben Smithett <ben@bensmithett.com>"
+  ],
+  "dependencies": {
+    "jquery": ">=1.4.3"
+  },
+  "description": "A tiny tool for easily attaching JS behaviour to a HTML element",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "README.md"
+  ]
+}
