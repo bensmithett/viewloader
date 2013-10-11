@@ -13,6 +13,7 @@
   "license": "MIT",
   "ignore": [
     "**/.*",
-    "README.md"
+    "README.md",
+    "test.html"
   ]
 }

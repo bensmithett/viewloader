@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Super Awesome Test Runner</title>
+  </head>
+  <body>
+    <div data-view="single" id="single"></div>
+
+    <div data-view="multiple" id="first"></div>
+    <div data-view="multiple" id="second"></div>
+
+    <div id="test-results"></div>
+
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.10.2.min.js"><\/script>')</script>
+    <script src="viewloader.js"></script>
+
+    <script>
+      var ids = "";
+      var results = document.getElementById( "test-results" );
+
+      viewloader.execute({
+        single: function ( $el, el ) {
+          $el.addClass("single-ready");
+        },
+        multiple: function ( $el, el ) {
+          $el.addClass("multiple-ready");
+        }
+      });
+
+      results.innerHTML += $(".single-ready").length === 1 ? "pass" : "FAAAAIL";
+      results.innerHTML += $(".multiple-ready").length === 2 ? "pass" : "FAAAAIL";
+    </script>
+  </body>
+</html>
