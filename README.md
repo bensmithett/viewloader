@@ -10,7 +10,7 @@ Add `data-view` attributes to your HTML:
 </div>
 ```
 
-Create a object for your app that lists setup functions for each type of view.
+Create an object for your app that lists setup functions for each type of view.
 
 ```javascript
 myApp.views = {
