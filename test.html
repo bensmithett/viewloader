@@ -5,10 +5,14 @@
     <title>Super Awesome Test Runner</title>
   </head>
   <body>
-    <div data-view="single" id="single"></div>
+    <div data-view-single="single" id="single"></div>
 
-    <div data-view="multiple" id="first"></div>
-    <div data-view="multiple" id="second"></div>
+    <div data-view-multiple='{"className":"first"}' id="first"></div>
+    <div data-view-multiple='{"className":"second"}' id="second"></div>
+
+    <div id="scoped">
+      <div data-view-multiple='{"className":"third"}' id="third"></div>
+    </div>
 
     <div id="test-results"></div>
 
@@ -20,17 +24,30 @@
       var ids = "";
       var results = document.getElementById( "test-results" );
 
+      var setupMultiple = function ( $el, el, props ) {
+        $el.addClass("multiple-ready").addClass("multiple-" + props.className);
+      };
+
       viewloader.execute({
-        single: function ( $el, el ) {
-          $el.addClass("single-ready");
+        single: function ( $el, el, props ) {
+          $el.addClass(props + "-ready");
         },
-        multiple: function ( $el, el ) {
-          $el.addClass("multiple-ready");
+        multiple: setupMultiple,
+        noMansLand: function( $el, el, props) {
+          $el.addClass("no-mans-land-ready");
         }
       });
 
+      viewloader.execute({
+        multiple: setupMultiple
+      }, $("scoped"))
+
       results.innerHTML += $(".single-ready").length === 1 ? "pass" : "FAAAAIL";
-      results.innerHTML += $(".multiple-ready").length === 2 ? "pass" : "FAAAAIL";
+      results.innerHTML += $(".multiple-ready").length === 3 ? "pass" : "FAAAAIL";
+      results.innerHTML += $(".multiple-first").length === 1 ? "pass" : "FAAAAIL";
+      results.innerHTML += $(".multiple-second").length === 1 ? "pass" : "FAAAAIL";
+      results.innerHTML += $("#scoped .multiple-third").length === 1 ? "pass" : "FAAAAIL";
+      results.innerHTML += $(".no-mans-land-ready").length === 0 ? "pass" : "FAAAAIL";
     </script>
   </body>
 </html>
