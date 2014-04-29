@@ -1,7 +1,7 @@
 viewloader is a tiny little framework-agnostic JS bootstrapping thing that lets you attach JS behaviour to a HTML element using data attributes.
 
 ## How to use it
-Add `data-view-setup-function-name` attributes to your HTML:
+Add `data-view-component-name` attributes to your HTML:
 
 ```html
 <div data-view-dropdown>
@@ -12,7 +12,7 @@ Add `data-view-setup-function-name` attributes to your HTML:
 </div>
 ```
 
-Create an object for your app that lists setup functions for each type of view.
+Create an object for your app that lists setup functions for each type of component.
 
 ```javascript
 myApp.views = {
@@ -43,7 +43,7 @@ viewloader.execute( myApp.views, $("#updated-dom-container") );
 ```
 
 ## Dependencies
-viewloader needs either [jQuery](http://jquery.com/) or [Zepto](http://zeptojs.com/). If you're not using either of those, it's 25 whole lines of JavaScript, so I’m sure you can rewrite it to suit your needs :)
+viewloader needs either [jQuery](http://jquery.com/) or [Zepto](http://zeptojs.com/). If you're not using either of those, it's 21 whole lines of JavaScript, so I’m sure you can rewrite it to suit your needs :)
 
 ## License
 viewloader is released under the [MIT License](http://ben.mit-license.org/)

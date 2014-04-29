@@ -1,4 +1,4 @@
-//  viewloader 0.0.2
+//  viewloader 0.0.3
 (function(root, factory) {
   root.viewloader = factory({},(root.jQuery || root.Zepto || root.$)); // Browser global
 }(this, function(viewloader,$) {
