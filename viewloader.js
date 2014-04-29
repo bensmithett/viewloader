@@ -4,7 +4,7 @@
 }(this, function(viewloader,$) {
   "use strict";
   var dasherize = function(s) {
-    return s.replace(/([a-z0-9])([A-Z])/g, "$1-$2");
+    return s.replace(/([a-z0-9])([A-Z])/g, "$1-$2").toLowerCase();
   };
   viewloader.execute = function(views, $scope) {
     for(var view in views) {
