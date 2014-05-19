@@ -1,5 +1,7 @@
 viewloader is a tiny little framework-agnostic JS bootstrapping thing that lets you attach JS behaviour to a HTML element using data attributes.
 
+*The original version, which didn't have named data attributes, will always be available here: [v0.0.1](https://github.com/bensmithett/viewloader/tree/v0.0.1)*
+
 ## How to use it
 Add `data-view-component-name` attributes to your HTML:
 
