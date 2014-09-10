@@ -47,7 +47,7 @@ viewloader.execute( myApp.views, $("#updated-dom-container") );
 This can be combined with an optional third argument — `includeScope` — which will add the passed scope element to the list of elements to be checked against the available views.
 
 ```javascript
-viewloader.execute( myApp.views, $("#updated-dom-container-with-data-view-component"), true );
+viewloader.execute( myApp.views, $("#updated-data-view-component"), true );
 ```
 
 ## Dependencies
