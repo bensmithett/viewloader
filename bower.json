@@ -1,7 +1,7 @@
 {
   "name": "viewloader",
   "main": "viewloader.js",
-  "version": "0.0.2",
+  "version": "2.0.0",
   "homepage": "https://github.com/bensmithett/viewloader",
   "authors": [
     "Ben Smithett <ben@bensmithett.com>"

@@ -1,14 +1,9 @@
-//  viewloader 0.0.2
 (function(root, factory) {
   root.viewloader = factory({},(root.jQuery || root.Zepto || root.$)); // Browser global
 }(this, function(viewloader,$) {
   "use strict";
   var dasherize = function(s) {
-    var r = /([a-z0-9][A-Z])/g,
-    dash = function(m) {
-      return m[0] + '-' + m[1].toLowerCase();
-    };
-    return s.replace(r, dash);
+    return s.replace(/([a-z0-9])([A-Z])/g, "$1-$2").toLowerCase();
   };
   viewloader.execute = function(views, $scope) {
     for(var view in views) {
