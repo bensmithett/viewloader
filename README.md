@@ -44,6 +44,12 @@ viewloader will transform `camelCased` function names into `dash-er-ized` attrib
 viewloader.execute( myApp.views, $("#updated-dom-container") );
 ```
 
+This can be combined with an optional third argument — `includeScope` — which will add the passed scope element to the list of elements to be checked against the available views.
+
+```javascript
+viewloader.execute( myApp.views, $("#updated-dom-container-with-data-view-component"), true );
+```
+
 ## Dependencies
 viewloader needs either [jQuery](http://jquery.com/) or [Zepto](http://zeptojs.com/). If you're not using either of those, it's 21 whole lines of JavaScript, so I’m sure you can rewrite it to suit your needs :)
 
