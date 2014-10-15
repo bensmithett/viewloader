@@ -1,7 +1,7 @@
 {
   "name": "viewloader",
   "main": "viewloader.js",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "homepage": "https://github.com/bensmithett/viewloader",
   "authors": [
     "Ben Smithett <ben@bensmithett.com>"
@@ -14,6 +14,7 @@
   "ignore": [
     "**/.*",
     "README.md",
-    "test.html"
+    "test.html",
+    ".gitignore"
   ]
 }

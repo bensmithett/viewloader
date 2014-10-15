@@ -12,14 +12,15 @@
 
     <div id="test-results"></div>
 
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-    <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.10.2.min.js"><\/script>')</script>
+    <script src="bower_components/jquery/dist/jquery.js"></script>
     <script src="viewloader.js"></script>
 
     <script>
       var ids = "";
       var results = document.getElementById( "test-results" );
 
+      // When an object is supplied as the first argument
+      // It calls setup functions from that object 
       viewloader.execute({
         single: function ( $el, el ) {
           $el.addClass("single-ready");

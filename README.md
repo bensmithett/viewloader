@@ -13,7 +13,7 @@ Add `data-view` attributes to your HTML:
 Create an object for your app that lists setup functions for each type of view.
 
 ```javascript
-myApp.views = {
+MyApp.Views = {
   dropdown: function( $el ) { $el.fancyDropdown(); },
   chatWindow: function( $el, el ) { new ChatWindowView({ el: el }); },
   // ... etc etc
@@ -23,10 +23,12 @@ myApp.views = {
 Once the DOM is ready, run:
 
 ```javascript
-viewloader.execute( myApp.views );
+viewloader.execute( MyApp.Views );
 ```
 
-viewloader will find every element on the page with a `data-view` attribute and call its setup function with 2 arguments:
+viewloader will find every element on the page with a `data-view` attribute and check to see if a function with that name exists on the supplied object.
+
+If such a function exists, it will be called 2 arguments:
 
 - `$el`: the jQuery-wrapped DOM element (i.e. `$(el)`)
 - `el`: the DOM element
