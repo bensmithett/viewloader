@@ -5,10 +5,12 @@
     <title>Super Awesome Test Runner</title>
   </head>
   <body>
-    <div data-view="single" id="single"></div>
+    <div data-view="singleThing" id="single"></div>
 
-    <div data-view="multiple" id="first"></div>
-    <div data-view="multiple" id="second"></div>
+    <div data-view="multipleThing" id="first"></div>
+    <div data-view="multipleThing" id="second"></div>
+
+    <div data-view="doesntExist" id="doesnt-exist"></div>
 
     <div id="test-results"></div>
 
@@ -20,18 +22,57 @@
       var results = document.getElementById( "test-results" );
 
       // When an object is supplied as the first argument
-      // It calls setup functions from that object 
-      viewloader.execute({
-        single: function ( $el, el ) {
-          $el.addClass("single-ready");
-        },
-        multiple: function ( $el, el ) {
-          $el.addClass("multiple-ready");
-        }
-      });
+      // It calls setup functions from that object with the `new` keyword
+
+
+      var views = {
+
+        // Generated from this coffee:
+
+        // class SingleThing
+        //   constructor: ($el, el) ->
+        //     @do($el);
+
+        //   do: ($el) ->
+        //     $el.addClass("single-ready");
+
+        SingleThing: (function() {
+          function SingleThing($el, el) {
+            this["do"]($el);
+          }
+          SingleThing.prototype["do"] = function($el) {
+            return $el.addClass("single-ready");
+          };
+          return SingleThing;
+        })(),
+
+
+
+        // Generated from this coffee:
+
+        // class MultipleThing
+        //   constructor: ($el, el) ->
+        //     @do($el);
+
+        //   do: ($el) ->
+        //     $el.addClass("multiple-ready");
+
+        MultipleThing: (function() {
+          function MultipleThing($el, el) {
+            this["do"]($el);
+          }
+          MultipleThing.prototype["do"] = function($el) {
+            return $el.addClass("multiple-ready");
+          };
+          return MultipleThing;
+        })()
+      };
+
+      viewloader.execute(views);
 
       results.innerHTML += $(".single-ready").length === 1 ? "pass" : "FAAAAIL";
       results.innerHTML += $(".multiple-ready").length === 2 ? "pass" : "FAAAAIL";
+      // Also, if there are no errors, the doesntExist version passed.
     </script>
   </body>
 </html>

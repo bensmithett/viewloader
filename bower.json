@@ -1,8 +1,8 @@
 {
-  "name": "viewloader",
+  "name": "viewloader-envato",
   "main": "viewloader.js",
-  "version": "1.0.1",
-  "homepage": "https://github.com/bensmithett/viewloader",
+  "version": "1.0.1-envato",
+  "homepage": "https://github.com/envato/viewloader",
   "authors": [
     "Ben Smithett <ben@bensmithett.com>"
   ],
